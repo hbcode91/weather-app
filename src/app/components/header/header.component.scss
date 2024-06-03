@@ -1,6 +1,6 @@
 :host {
   .toolbar {
-    position: absolute;
+    padding: 15px;
     top: 0;
     left: 0;
     right: 0;
@@ -15,19 +15,5 @@
       margin: 0 16px;
     }
 
-    #twitter-logo {
-      height: 40px;
-      margin: 0 8px;
-    }
-
-    #youtube-logo {
-      height: 40px;
-      margin: 0 16px;
-    }
-
-    #twitter-logo:hover,
-    #youtube-logo:hover {
-      opacity: 0.8;
-    }
   }
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainPageComponent } from './main-page.component';
+import { CardModule } from "../../shared/card/card.module";
 
 
 @NgModule({
@@ -8,7 +9,8 @@ import { MainPageComponent } from './main-page.component';
     MainPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CardModule
   ],
   exports: [MainPageComponent]
 })

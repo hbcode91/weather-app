@@ -1,0 +1,10 @@
+:host {
+  padding: 20px;
+  background-color: rgb(243, 244, 246);
+  height: calc(100% - 130px);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  overflow-y: auto;
+  gap: 50px;
+}

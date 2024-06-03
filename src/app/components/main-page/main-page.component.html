@@ -1,1 +1,6 @@
-<p>main-page works!</p>
+<ng-container *ngIf="locationService.getLocations() | async as locations">
+  <ng-container *ngFor="let location of locations">
+    <app-card [location]="location"></app-card>
+  </ng-container>
+</ng-container>
+

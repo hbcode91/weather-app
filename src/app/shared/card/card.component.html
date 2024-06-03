@@ -1,0 +1,27 @@
+<div class="card" *ngIf="current">
+  <div>
+    <span class="title">Name : </span>
+    {{ location.name }}
+  </div>
+  <div>
+    <span class="title">Cloud Cover : </span>
+    {{ current.cloud_cover }}
+  </div>
+  <div>
+    <span class="title">Temperature : </span>
+    {{ current.temperature_2m }}
+  </div>
+  <div>
+    <span class="title">Visibility : </span>
+    {{ current.visibility }}
+  </div>
+  <div>
+    <span class="title">Wind Speed : </span>
+    {{ current.wind_speed_10m }}
+  </div>
+  <div class="icon-block">
+    <img alt="" *ngIf="current.cloud_cover < 20" src="./assets/icons/sun.svg">
+    <img alt="" *ngIf="current.cloud_cover > 20 && current.cloud_cover < 60" src="./assets/icons/sun_cloud.svg">
+    <img alt="" *ngIf="current.cloud_cover > 60 " src="./assets/icons/cloud.svg">
+  </div>
+</div>
