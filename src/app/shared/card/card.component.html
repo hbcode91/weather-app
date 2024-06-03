@@ -4,20 +4,24 @@
     {{ location.name }}
   </div>
   <div>
-    <span class="title">Cloud Cover : </span>
-    {{ current.cloud_cover }}
+    <span class="title">Temperature : </span>
+    {{ current.temperature_2m }} °C
   </div>
   <div>
-    <span class="title">Temperature : </span>
-    {{ current.temperature_2m }}
+    <span class="title">Cloud Cover : </span>
+    {{ current.cloud_cover }}%
+  </div>
+  <div>
+    <span class="title">Relative Humidity : </span>
+    {{ current.relative_humidity_2m }}%
   </div>
   <div>
     <span class="title">Visibility : </span>
-    {{ current.visibility }}
+    {{ current.visibility / 1000 }} KM
   </div>
   <div>
     <span class="title">Wind Speed : </span>
-    {{ current.wind_speed_10m }}
+    {{ current.wind_speed_10m }} km/h
   </div>
   <div class="icon-block">
     <img alt="" *ngIf="current.cloud_cover < 20" src="./assets/icons/sun.svg">

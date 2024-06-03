@@ -8,7 +8,7 @@ import { CurrentModel } from "../models/current.model";
 })
 export class WeatherApiService {
   private readonly API = 'https://api.open-meteo.com/v1/forecast';
-  private readonly CURRENT_PARAMS = ['temperature_2m', 'cloud_cover', 'wind_speed_10m', 'wind_direction_10m', 'visibility', 'is_day'];
+  private readonly CURRENT_PARAMS = ['temperature_2m', 'cloud_cover', 'wind_speed_10m', 'wind_direction_10m', 'visibility', 'is_day','relative_humidity_2m'];
 
   constructor(private http: HttpClient) {
   }
