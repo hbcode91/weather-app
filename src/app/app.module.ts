@@ -4,27 +4,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './components/header/header.component';
-import { MainPageModule } from "./components/main-page/main-page.module";
+import { HeaderComponent } from './components/header/header.component';;
 import { HttpClientModule } from "@angular/common/http";
 import { AdminComponent } from './components/admin/admin.component';
 import { LoginComponent } from './components/login/login.component';
+import { MetersToKmPipe } from './pipes/meters-to-km.pipe';
+import { WeatherCardComponent } from "./components/weather-card/weather-card.component";
+import { MainPageComponent } from "./components/main-page/main-page.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    MainPageComponent,
     AdminComponent,
-    LoginComponent
+    LoginComponent,
+    WeatherCardComponent,
+    MetersToKmPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule,
-    MainPageModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

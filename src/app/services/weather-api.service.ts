@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { Weather } from "../models/weather";
+import { C } from "@angular/cdk/keycodes";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class WeatherApiService {
   constructor(private http: HttpClient) {
   }
 
-  get(latitude: number, longitude: number): Observable<Weather> {
+  public get(latitude: number, longitude: number): Observable<Weather> {
     const params = {
       latitude,
       longitude,
@@ -22,4 +23,14 @@ export class WeatherApiService {
     return this.http.get<Weather>(`${this.API}`, {params});
   }
 
+  public getWeatherIconUrl(cloudCover: number): Observable<string> {
+    let iconName = 'sun.svg';
+    if (cloudCover > 20 && cloudCover <= 60) {
+      iconName = 'sun_cloud.svg';
+    } else if (cloudCover > 60) {
+      iconName = 'cloud.svg';
+    }
+
+    return of(`./assets/icons/${iconName}`);
+  }
 }

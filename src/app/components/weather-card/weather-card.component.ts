@@ -2,16 +2,18 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LocationWeather } from "../../models/location-weather";
 import { Location } from "../../models/location";
 import { WeatherApiService } from "../../services/weather-api.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  templateUrl: './weather-card.component.html',
+  styleUrls: ['./weather-card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class WeatherCardComponent implements OnInit {
   @Input()
   public location!: Location;
   public locationWeather!: LocationWeather;
+  public weatherIconUrl$!: Observable<string>;
 
   constructor(private weatherApiService: WeatherApiService) {
   }
@@ -21,6 +23,7 @@ export class CardComponent implements OnInit {
       .subscribe({
         next: (response) => {
           this.locationWeather = response.current
+          this.weatherIconUrl$ = this.weatherApiService.getWeatherIconUrl(this.locationWeather.cloud_cover);
         }
       });
   }

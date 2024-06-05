@@ -1,7 +1,7 @@
 <div class="card" *ngIf="locationWeather">
   <div>
     <span class="title">Name : </span>
-    {{ location.name }}
+    {{ location.name | uppercase }}
   </div>
   <div>
     <span class="title">Temperature : </span>
@@ -17,15 +17,13 @@
   </div>
   <div>
     <span class="title">Visibility : </span>
-    {{ locationWeather.visibility / 1000 }} KM
+    {{ locationWeather.visibility | metersToKm }} KM
   </div>
   <div>
     <span class="title">Wind Speed : </span>
     {{ locationWeather.wind_speed_10m }} km/h
   </div>
   <div class="icon-block">
-    <img alt="" *ngIf="locationWeather.cloud_cover < 20" src="./assets/icons/sun.svg">
-    <img alt="" *ngIf="locationWeather.cloud_cover > 20 && locationWeather.cloud_cover < 60" src="./assets/icons/sun_cloud.svg">
-    <img alt="" *ngIf="locationWeather.cloud_cover > 60 " src="./assets/icons/cloud.svg">
+    <img alt="" [src]="weatherIconUrl$ | async">
   </div>
 </div>
