@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { CurrentModel } from "../models/current.model";
+import { Weather } from "../models/weather";
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherApiService {
   private readonly API = 'https://api.open-meteo.com/v1/forecast';
-  private readonly CURRENT_PARAMS = ['temperature_2m', 'cloud_cover', 'wind_speed_10m', 'wind_direction_10m', 'visibility', 'is_day','relative_humidity_2m'];
+  private readonly CURRENT_PARAMS = ['temperature_2m', 'cloud_cover', 'wind_speed_10m', 'wind_direction_10m', 'visibility', 'is_day', 'relative_humidity_2m'];
 
   constructor(private http: HttpClient) {
   }
 
-  get(latitude: number, longitude: number): Observable<{ current: CurrentModel }> {
+  get(latitude: number, longitude: number): Observable<Weather> {
     const params = {
       latitude,
       longitude,
       current: this.CURRENT_PARAMS
     };
-    return this.http.get<{ current: CurrentModel }>(`${this.API}`, {params});
+    return this.http.get<Weather>(`${this.API}`, {params});
   }
 
 }

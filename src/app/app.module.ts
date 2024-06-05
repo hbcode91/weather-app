@@ -7,11 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { MainPageModule } from "./components/main-page/main-page.module";
 import { HttpClientModule } from "@angular/common/http";
+import { AdminComponent } from './components/admin/admin.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

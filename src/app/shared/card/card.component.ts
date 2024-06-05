@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CurrentModel } from "../../models/current.model";
-import { LocationModel } from "../../models/location.model";
+import { LocationWeather } from "../../models/location-weather";
+import { Location } from "../../models/location";
 import { WeatherApiService } from "../../services/weather-api.service";
 
 @Component({
@@ -10,8 +10,8 @@ import { WeatherApiService } from "../../services/weather-api.service";
 })
 export class CardComponent implements OnInit {
   @Input()
-  public location!: LocationModel;
-  public current!: CurrentModel;
+  public location!: Location;
+  public locationWeather!: LocationWeather;
 
   constructor(private weatherApiService: WeatherApiService) {
   }
@@ -20,7 +20,7 @@ export class CardComponent implements OnInit {
     this.weatherApiService.get(this.location.latitude, this.location.longitude)
       .subscribe({
         next: (response) => {
-          this.current = response.current
+          this.locationWeather = response.current
         }
       });
   }
