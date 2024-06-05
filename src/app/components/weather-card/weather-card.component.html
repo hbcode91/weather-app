@@ -1,4 +1,4 @@
-<div class="card" *ngIf="locationWeather">
+<div class="card" *ngIf="locationWeather" appTooltip [tooltipContent]="location.name">
   <div>
     <span class="title">Name : </span>
     {{ location.name | uppercase }}

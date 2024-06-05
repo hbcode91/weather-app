@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { MetersToKmPipe } from './pipes/meters-to-km.pipe';
 import { WeatherCardComponent } from "./components/weather-card/weather-card.component";
 import { MainPageComponent } from "./components/main-page/main-page.component";
+import { TooltipDirective } from './directives/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MainPageComponent } from "./components/main-page/main-page.component";
     AdminComponent,
     LoginComponent,
     WeatherCardComponent,
-    MetersToKmPipe
+    MetersToKmPipe,
+    TooltipDirective
   ],
   imports: [
     BrowserModule,
