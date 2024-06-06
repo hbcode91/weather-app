@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from "../services/auth.service";
 
@@ -8,13 +8,19 @@ import { AuthService } from "../services/auth.service";
 })
 export class LoggedInGuard implements CanActivate {
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+              private router: Router) {
   }
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> {
-    return this.authService.isAdminUser();
+    state: RouterStateSnapshot): boolean {
+    if (this.authService.isAdminUser()) {
+      return true;
+    } else {
+      this.router.navigate(['/Login']).then( );
+      return false;
+    }
   }
 
 }

@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public toggleAuth() {
     if (this.isAuthenticated) {
       this.authService.logOut();
+      this.router.navigate(['']).then();
     } else {
       this.router.navigate(['login']).then();
     }
