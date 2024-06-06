@@ -8,7 +8,7 @@ import { Location } from "../../models/location";
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
-  locations!: Location[];
+  public locations!: Location[];
 
   constructor(private route: ActivatedRoute) {
   }
@@ -16,7 +16,6 @@ export class SettingsComponent implements OnInit {
   ngOnInit(): void {
     this.route.data.subscribe(data => {
       this.locations = data['locations'];
-      console.log(this.locations);
     });
   }
 

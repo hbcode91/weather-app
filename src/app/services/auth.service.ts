@@ -22,6 +22,6 @@ export class AuthService {
   }
 
   isAdminUser() {
-    return this.isAdminLogged || true;
+    return this.isAdminLogged;
   }
 }

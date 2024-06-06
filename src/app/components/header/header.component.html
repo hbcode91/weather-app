@@ -5,7 +5,7 @@
   </div>
   <div class="right-block">
     <a href="" routerLink="">Home</a>
-    <a href="" routerLink="/settings">Settings</a>
+    <a *ngIf="isAuthenticated" href="" routerLink="/settings">Settings</a>
     <a href="javascript:void(0);" (click)="toggleAuth()">{{ isAuthenticated ? 'logout' : 'login' }}</a>
   </div>
 </div>
