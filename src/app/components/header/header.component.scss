@@ -1,16 +1,37 @@
 :host {
+  $color : white;
+
   .toolbar {
     padding: 15px;
     height: 60px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: #1976d2;
-    color: white;
-    font-weight: 600;
 
-    img {
-      margin: 0 16px;
+    .left-block {
+      display: flex;
+      align-items: center;
+
+      .title {
+        color: $color;
+        font-weight: 600;
+      }
+
+      img {
+        margin: 0 16px;
+      }
     }
 
+    .right-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 20px;
+
+      a {
+        color: $color;
+      }
+    }
   }
 }
