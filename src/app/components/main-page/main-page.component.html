@@ -1,6 +1,6 @@
 <ng-container *ngIf="locationService.getLocations() | async as locations">
   <ng-container *ngFor="let location of locations">
-    <app-card [location]="location"></app-card>
+    <app-weather-card [location]="location"></app-weather-card>
   </ng-container>
 </ng-container>
 

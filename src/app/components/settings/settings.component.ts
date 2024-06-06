@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
+import { Location } from "../../models/location";
 
 @Component({
   selector: 'app-settings',
@@ -19,4 +20,10 @@ export class SettingsComponent implements OnInit {
     });
   }
 
+
+  public remove(index: number) {
+    if (window.confirm("Do you really want to remove this item ?")) {
+      this.locations.splice(index, 1);
+    }
+  }
 }

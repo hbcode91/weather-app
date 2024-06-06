@@ -5,7 +5,7 @@ import { WeatherApiService } from "../../services/weather-api.service";
 import { Observable } from "rxjs";
 
 @Component({
-  selector: 'app-card',
+  selector: 'app-weather-card',
   templateUrl: './weather-card.component.html',
   styleUrls: ['./weather-card.component.scss']
 })
