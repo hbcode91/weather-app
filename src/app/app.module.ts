@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from "@angular/common/http";
-import { SettingsComponent } from './components/settings/settings.component';
-import { LoginComponent } from './components/login/login.component';
+import { SettingsPageComponent } from './components/settings-page/settings-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
 import { MetersToKmPipe } from './pipes/meters-to-km.pipe';
 import { WeatherCardComponent } from "./components/weather-card/weather-card.component";
 import { MainPageComponent } from "./components/main-page/main-page.component";
@@ -19,8 +19,8 @@ import { FormsModule } from "@angular/forms";
     AppComponent,
     HeaderComponent,
     MainPageComponent,
-    SettingsComponent,
-    LoginComponent,
+    SettingsPageComponent,
+    LoginPageComponent,
     WeatherCardComponent,
     MetersToKmPipe,
     TooltipDirective

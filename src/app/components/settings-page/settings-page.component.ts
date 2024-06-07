@@ -3,11 +3,11 @@ import { ActivatedRoute } from "@angular/router";
 import { Location } from "../../models/location";
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.scss']
+  selector: 'app-settings-page',
+  templateUrl: './settings-page.component.html',
+  styleUrls: ['./settings-page.component.scss']
 })
-export class SettingsComponent implements OnInit {
+export class SettingsPageComponent implements OnInit {
   public locations!: Location[];
 
   constructor(private route: ActivatedRoute) {

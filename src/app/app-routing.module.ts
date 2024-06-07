@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainPageComponent } from "./components/main-page/main-page.component";
-import { LoginComponent } from "./components/login/login.component";
-import { SettingsComponent } from "./components/settings/settings.component";
+import { LoginPageComponent } from "./components/login-page/login-page.component";
+import { SettingsPageComponent } from "./components/settings-page/settings-page.component";
 import { LoggedInGuard } from "./guards/logged-in.guard";
 import { LocationResolver } from "./resolvers/location.resolver";
 
 const routes: Routes = [
   {path: '', component: MainPageComponent},
-  {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginPageComponent},
   {
-    path: 'settings', component: SettingsComponent,
+    path: 'settings', component: SettingsPageComponent,
     canActivate: [LoggedInGuard],
     resolve: {
       locations: LocationResolver
