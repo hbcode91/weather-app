@@ -1,4 +1,4 @@
-export interface LocationWeather {
+export interface CityWeather {
   time: string;
   interval: number;
   temperature_2m: number;

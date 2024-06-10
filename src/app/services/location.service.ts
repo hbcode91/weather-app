@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Location } from "../models/location";
+import { City } from "../models/city";
 import { Observable, of } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocationService {
-  public locations: Location[] = [
+  public cities: City[] = [
     {
       name: 'Lattes',
       latitude: 43.5677,
@@ -59,7 +59,7 @@ export class LocationService {
     }
   ];
 
-  public getLocations(): Observable<Location[]> {
-    return of(this.locations);
+  public getLocations(): Observable<City[]> {
+    return of(this.cities);
   }
 }

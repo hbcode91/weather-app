@@ -1,5 +1,5 @@
-import { LocationWeather } from "./location-weather";
+import { CityWeather } from "./city-weather";
 
 export interface Weather {
-  current: LocationWeather
+  current: CityWeather
 }

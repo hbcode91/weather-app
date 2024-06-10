@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { Location } from "../../models/location";
+import { City } from "../../models/city";
 
 @Component({
   selector: 'app-settings-page',
@@ -8,7 +8,7 @@ import { Location } from "../../models/location";
   styleUrls: ['./settings-page.component.scss']
 })
 export class SettingsPageComponent implements OnInit {
-  public locations!: Location[];
+  public locations!: City[];
 
   constructor(private route: ActivatedRoute) {
   }

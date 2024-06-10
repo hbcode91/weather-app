@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { LocationWeather } from "../../models/location-weather";
-import { Location } from "../../models/location";
+import { CityWeather } from "../../models/city-weather";
+import { City } from "../../models/city";
 import { WeatherApiService } from "../../services/weather-api.service";
 import { Observable } from "rxjs";
 
@@ -11,8 +11,8 @@ import { Observable } from "rxjs";
 })
 export class WeatherCardComponent implements OnInit {
   @Input()
-  public location!: Location;
-  public locationWeather!: LocationWeather;
+  public location!: City;
+  public locationWeather!: CityWeather;
   public weatherIconUrl$!: Observable<string>;
 
   constructor(private weatherApiService: WeatherApiService) {

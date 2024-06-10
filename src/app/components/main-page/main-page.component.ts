@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from "../../services/location.service";
-import { Location } from "../../models/location";
+import { City } from "../../models/city";
 
 @Component({
   selector: 'app-main-page',
@@ -8,7 +8,7 @@ import { Location } from "../../models/location";
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-  public locations!: Location[];
+  public locations!: City[];
 
   constructor(public locationService: LocationService) {
   }

@@ -11,7 +11,7 @@ import { Subject } from "rxjs";
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   @Input()
-  public title!: string;
+  public appTitle!: string;
   public isAuthenticated!: boolean;
   private readonly unsubscribe$: Subject<void> = new Subject<void>();
 
