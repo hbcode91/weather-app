@@ -4,7 +4,7 @@ import { MainPageComponent } from "./components/main-page/main-page.component";
 import { LoginPageComponent } from "./components/login-page/login-page.component";
 import { SettingsPageComponent } from "./components/settings-page/settings-page.component";
 import { LoggedInGuard } from "./guards/logged-in.guard";
-import { LocationResolver } from "./resolvers/location.resolver";
+import { PlaceResolver } from "./resolvers/place.resolver";
 
 const routes: Routes = [
   {path: '', component: MainPageComponent},
@@ -13,7 +13,7 @@ const routes: Routes = [
     path: 'settings', component: SettingsPageComponent,
     canActivate: [LoggedInGuard],
     resolve: {
-      locations: LocationResolver
+      cities: PlaceResolver
     }
   },
   {path: '**', redirectTo: 'login'}

@@ -5,7 +5,8 @@ import { Observable, of } from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class LocationService {
+export class PlaceService {
+
   public cities: City[] = [
     {
       name: 'Lattes',
@@ -59,7 +60,7 @@ export class LocationService {
     }
   ];
 
-  public getLocations(): Observable<City[]> {
+  public getCities(): Observable<City[]> {
     return of(this.cities);
   }
 }

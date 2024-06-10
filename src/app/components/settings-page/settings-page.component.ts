@@ -8,21 +8,21 @@ import { City } from "../../models/city";
   styleUrls: ['./settings-page.component.scss']
 })
 export class SettingsPageComponent implements OnInit {
-  public locations!: City[];
+  public cities!: City[];
 
   constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
-      this.locations = data['locations'];
+      this.cities = data['cities'];
     });
   }
 
 
   public remove(index: number) {
     if (window.confirm("Do you really want to remove this item ?")) {
-      this.locations.splice(index, 1);
+      this.cities.splice(index, 1);
     }
   }
 }

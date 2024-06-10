@@ -5,18 +5,17 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable } from 'rxjs';
+import { PlaceService } from "../services/place.service";
 import { City } from "../models/city";
-import { LocationService } from "../services/location.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class LocationResolver implements Resolve<City[]> {
-
-  constructor(private locationService: LocationService) {
+export class PlaceResolver implements Resolve<City[]> {
+  constructor(private placeService: PlaceService) {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<City[]> {
-    return this.locationService.getLocations();
+    return this.placeService.getCities();
   }
 }

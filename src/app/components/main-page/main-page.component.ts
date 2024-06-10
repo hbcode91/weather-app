@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LocationService } from "../../services/location.service";
+import { PlaceService } from "../../services/place.service";
 import { City } from "../../models/city";
 
 @Component({
@@ -8,15 +8,15 @@ import { City } from "../../models/city";
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-  public locations!: City[];
+  public cities!: City[];
 
-  constructor(public locationService: LocationService) {
+  constructor(public placeService: PlaceService) {
   }
 
   ngOnInit(): void {
-    this.locationService.getLocations()
+    this.placeService.getCities()
       .subscribe({
-        next: value => this.locations = value
+        next: value => this.cities = value
       });
   }
 

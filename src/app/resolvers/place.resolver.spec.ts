@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LocationResolver } from './location.resolver';
+import { PlaceResolver } from './place.resolver';
 
-describe('LocationResolver', () => {
-  let resolver: LocationResolver;
+describe('PlaceResolver', () => {
+  let resolver: PlaceResolver;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    resolver = TestBed.inject(LocationResolver);
+    resolver = TestBed.inject(PlaceResolver);
   });
 
   it('should be created', () => {
